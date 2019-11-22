@@ -13,7 +13,7 @@ import { AuthGaurdService } from './service/auth-gaurd.service';
 import { RegistrationComponent} from './registration/registration.component';
 import { CustomerComponent } from './customer/customer/customer.component';
 const routes: Routes = [
-  { path: '', component: EmployeeComponent,canActivate:[AuthGaurdService] },
+  { path: 'emp', component: EmployeeComponent,canActivate:[AuthGaurdService] },
   { path: 'addemployee', component: AddEmployeeComponent,canActivate:[AuthGaurdService]},
   { path: 'login', component: LoginComponent },
   { path: 'register',component: RegistrationComponent},

@@ -28,8 +28,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import '../polyfills';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomepageComponent } from './homepage/homepage.component';
 import { MDBBootstrapModule} from 'angular-bootstrap-md';
+import { HomePageComponent } from './home-page/home-page.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +47,7 @@ import { MDBBootstrapModule} from 'angular-bootstrap-md';
     QueryFromComponent,
     UpdateFormComponent,
     StepperErrorsExampleComponent,
-    HomepageComponent
+    HomePageComponent
    
   ],
   imports: [
