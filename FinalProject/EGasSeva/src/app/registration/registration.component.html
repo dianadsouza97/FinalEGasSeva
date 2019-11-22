@@ -1,0 +1,25 @@
+<form>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" [(ngModel)]="user.username" placeholder="Name" name="username" class="form-control" id="username">
+    </div>
+  
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input [(ngModel)]="user.email" placeholder="Email" name="email" class="form-control" id="email">
+    </div>
+    <div class="form-group">
+    <select name="custType" [(ngModel)]="user.custType">
+      <option value="customer" disabled>Select a customer type</option>
+      <option value="regular">Regular Customer</option>
+      <option value="dealer">Dealer</option>
+    </select>
+  </div>
+  <div class="form-group">
+      
+      <input type="hidden" [(ngModel)]="user.isEnabled" name="isEnabled" class="form-control" id="isEnabled" value='1'>
+    </div>
+  <button (click)=register() class="btn btn-success">
+    Login
+  </button>
+</form>

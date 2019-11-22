@@ -1,0 +1,122 @@
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container">
+<br>
+        <h1>Online-Booking </h1>
+    <form [formGroup]=" gasbooking" (ngSubmit)="onSubmit() " >
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">Full Name    : </label>
+            <input [class.is-invalid]="gasbooking.get('fullName').invalid && gasbooking.get('fullName').touched  " type="text" class="form-control" id="name" formControlName="fullName"  name="name">
+            <small [class.d-none]="gasbooking.get('fullName').valid ||
+            gasbooking.get('fullName').untouched " class="text-danger">Full Name is required.</small>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+            <label for="DOB">Date of Birth: </label>
+            <input type="date" class="form-control" id="date "  name =" date" formControlName="Dob">
+        </div>
+
+        <!-- Customer EmailId-->
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input [class.is-invalid]="gasbooking.get('Email').invalid && gasbooking.get('Email').touched  "
+            type="email" class="form-control" id="email"  name ="email" formControlName="Email">
+        <small [class.d-none]="gasbooking.get('Email').valid ||
+    gasbooking.get('Email').untouched " class="text-danger"> Email is required.</small>
+      
+      </div>
+
+        
+
+        <!-- Gas Agency -->
+        <div class="form-group">
+            <label for="agency">Gas Agency : </label>
+            <input [class.is-invalid]="gasbooking.get('GasAgency').invalid && gasbooking.get('GasAgency').touched  " type="text" class="form-control" id="gasagency" name="gasagency"   formControlName="GasAgency" >
+            <small [class.d-none]="gasbooking.get('GasAgency').valid ||
+            gasbooking.get('GasAgency').untouched " class="text-danger">Gas Agency should be mentioned.</small>
+        </div>
+      
+        <!--Customer Contact No-->
+        <div class="form-group">
+            <label for="contact">Contact No : </label>
+            <input type="tel" class="form-control" id="contact"  name ="contact" formControlName="CustomerContactNo">
+        </div>
+
+         <!--Adhaar Number-->
+         <div class="form-group">
+            <label for="adhaar">Adhaar no: </label>
+            <input [class.is-invalid]="gasbooking.get('Adhaarno').invalid && gasbooking.get('Adhaarno').touched  " type="number" class="form-control" id="adhaar" name ="adhaar"formControlName="Adhaarno" >
+            <small [class.d-none]="gasbooking.get('Adhaarno').valid ||
+            gasbooking.get('Adhaarno').untouched " class="text-danger">Adhaar number is required.</small>
+        </div>
+
+
+
+
+
+        <!-- Customer Address -->
+        <div formGroupName="CustomerAddress">
+            <h4> Customer Address </h4>
+            <div class="form-group">
+                <label>
+                    Street:
+                    <input type="text" class="form-control" formControlName="street" name ="street">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+                <label>
+                    City:
+                    <input type="text" class="form-control" formControlName="city" name="city">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+                <label>
+                    State:
+                    <input type="text" class="form-control" formControlName="state"name="state">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+                <label>
+                    Zip Code:
+                    <input type="number" class="form-control" formControlName="zip" name="zip">
+                </label>
+
+            </div>
+
+        </div>
+       
+        <button type="submit" class="btn btn-primary" >Book</button>
+
+        <script>
+                // Disable form submissions if there are invalid fields
+                (function() {
+                  'use strict';
+                  window.addEventListener('load', function() {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                      form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                          event.preventDefault();
+                          event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                      }, false);
+                    });
+                  }, false);
+                })();
+                </script>
+                
+    </form>
+  
+</div>

@@ -1,0 +1,90 @@
+<mat-horizontal-stepper linear #stepper>
+  <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Fill out Details</ng-template>
+
+      <mat-form-field>
+        <input matInput type="name" placeholder="Full Name"  class="form-control" formControlName="name"
+           required>
+      </mat-form-field>
+      <br>
+      <mat-form-field> <input matInput type="email" placeholder="Email"  class="form-control" 
+          formControlName="email" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field> <input matInput type="text" placeholder="Contact"  class="form-control" 
+          formControlName="contact" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Fill out your address</ng-template>
+
+      <mat-form-field>
+        <input matInput type="number" placeholder="Zipcode"  class="form-control"
+          formControlName="zipcode"  required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="City"  class="form-control" 
+          formControlName="city" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="State"  class="form-control" 
+          formControlName="state" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Country"  class="form-control" 
+          formControlName="country" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+
+
+        <input matInput type="text" placeholder="Agency"  class="form-control" 
+          formControlName="agency" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="thirdFormGroup" errorMessage="Password is required.">
+    <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>Reset Password</ng-template>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Password"  class="form-control" 
+          formControlName="password" required>
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Confirm Pasword " class="form-control" 
+          formControlName="cpassword" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="createCustomer()">Submit</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

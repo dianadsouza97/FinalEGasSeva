@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container">
+
+    <h1>Technical Support and Query Form </h1>
+    <form [formGroup]="queryform " >
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">Full Name : </label>
+            <input [class.is-invalid]="queryform.get('fullName').invalid && queryform.get('fullName').touched  " type="text" class="form-control" id="name" name="name" formControlName="fullName" >
+            <small [class.d-none]="queryform.get('fullName').valid ||
+             queryform.get('fullName').untouched " class="text-danger">Full Name is required.</small>
+        </div>
+
+
+
+        <!-- Customer EmailId  -->   
+             <div class="form-group">
+            <label for="email">Email : </label>
+            <input  [class.is-invalid]="queryform.get('Email').invalid && queryform.get('Email').touched  " type="email" class="form-control" id="email" id="email" formControlName="Email" >
+            <small [class.d-none]="queryform.get('Email').valid ||
+            queryform.get('Email').untouched " class="text-danger"> Email is required.</small>
+       </div>
+     
+            <!--div class="invalid-feedback">Please fill out this field.</div>
+            //<div class="valid-feedback">Valid.</div-->
+               
+
+        
+
+        <!--Customer Contact No-->
+        <div class="form-group">
+                <label for="contact">Contact No : </label>
+                <input type="tel" class="form-control" id="contact" name="contact" formControlName="CustomerContactNo">
+            </div>
+
+
+             <!--Customer Contact No-->
+    <div class="form-group">
+                <label for="query">How can we help you?  </label>
+                </div>
+                <textarea rows="5" cols="155" formControlName="query" name="query" >
+                    </textarea> <br><br>
+           
+
+
+
+
+
+
+        
+        <button type="submit" class="btn btn-primary">send</button>
+
+
+
+    </form>
+
+</div>
