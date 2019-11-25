@@ -4,16 +4,23 @@
       <ng-template matStepLabel>Fill out Details</ng-template>
 
       <mat-form-field>
-        <input matInput type="name" placeholder="Full Name"  class="form-control" formControlName="name"
-           required>
+        <input matInput type="name" placeholder="Full Name" class="form-control" formControlName="name" required>
+        <mat-hint align="end">Not more then 60 characters long.</mat-hint>
+        <mat-error *ngIf="hasError1('name', 'required')">Name is required</mat-error>
+        <mat-error *ngIf="hasError1('name', 'maxlength')">Max 5 characters required</mat-error>
+        <mat-error *ngIf="hasError1('name', 'minlength')">Min 3 characters required</mat-error>
+      </mat-form-field>
+
+      <br>
+      <mat-form-field> <input matInput type="email" placeholder="Email" class="form-control" formControlName="email"
+          required>
       </mat-form-field>
       <br>
-      <mat-form-field> <input matInput type="email" placeholder="Email"  class="form-control" 
-          formControlName="email" required>
-      </mat-form-field>
-      <br>
-      <mat-form-field> <input matInput type="text" placeholder="Contact"  class="form-control" 
-          formControlName="contact" required>
+
+      <mat-form-field> <input matInput type="text" placeholder="Contact" class="form-control" formControlName="contact"
+          required>
+        <mat-error *ngIf="hasError1('contact', 'maxlength')">10 digits required</mat-error>
+        <mat-error *ngIf="hasError1('contact', 'minlength')">10 digits required</mat-error>
       </mat-form-field>
 
       <div>
@@ -21,35 +28,42 @@
       </div>
     </form>
   </mat-step>
+
   <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
     <form [formGroup]="secondFormGroup">
       <ng-template matStepLabel>Fill out your address</ng-template>
 
       <mat-form-field>
-        <input matInput type="number" placeholder="Zipcode"  class="form-control"
-          formControlName="zipcode"  required>
+        <input matInput type="number" placeholder="Zipcode" class="form-control" formControlName="zipcode" required>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput type="text" placeholder="City"  class="form-control" 
-          formControlName="city" required>
+        <label>Select Country</label>
+        <mat-select class="form-control">
+          <mat-option *ngFor="let country of countryInfo; let i = index" value="{{i}}">{{country.CountryName}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput type="text" placeholder="State"  class="form-control" 
-          formControlName="state" required>
-      </mat-form-field>
+          <label>Select State</label>
+        <mat-select class="form-control" (change)="onChangeState($event.target.value)">
+          <mat-option *ngIf="stateInfo == ''" value="-1">--Select State--</mat-option>
+          <mat-option *ngFor="let state of stateInfo; let j = index" value="{{j}}">{{state.StateName}}</mat-option>
+        </mat-select>      </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput type="text" placeholder="Country"  class="form-control" 
-          formControlName="country" required>
-      </mat-form-field>
+        <label>Select City</label>
+        <mat-select class="form-control">
+            <mat-option *ngIf="cityInfo == ''" value="-1">--Select CIty--</mat-option>
+          <mat-option *ngFor="let city of cityInfo; let k = index" value="{{k}}">{{city}}</mat-option>
+        </mat-select>
+            </mat-form-field>
       <br>
       <mat-form-field>
 
 
-        <input matInput type="text" placeholder="Agency"  class="form-control" 
-          formControlName="agency" required>
+        <input matInput type="text" placeholder="Agency" class="form-control" formControlName="agency" required>
       </mat-form-field>
 
       <div>
@@ -63,13 +77,11 @@
     <form [formGroup]="thirdFormGroup">
       <ng-template matStepLabel>Reset Password</ng-template>
       <mat-form-field>
-        <input matInput type="text" placeholder="Password"  class="form-control" 
-          formControlName="password" required>
+        <input matInput type="text" placeholder="Password" class="form-control" formControlName="password" required>
       </mat-form-field>
       <br>
       <mat-form-field>
-        <input matInput type="text" placeholder="Confirm Pasword " class="form-control" 
-          formControlName="cpassword" required>
+        <input matInput type="text" placeholder="Confirm Pasword " class="form-control" required>
       </mat-form-field>
       <div>
         <button mat-button matStepperPrevious>Back</button>
