@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/egasseva
+    username: root
+    password: pass@word1
+    
+  jpa:    hibernate:      ddl-auto: create
+server:  port: 8083

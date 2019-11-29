@@ -1,9 +1,11 @@
-import { CountriesService } from './../countries.service';
+
 import { Employee } from './../service/httpclient.service';
 import { Component, OnInit, SystemJsNgModuleLoader } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
 import { STEPPER_GLOBAL_OPTIONS } from '@angular/cdk/stepper';
 import { HttpClientService } from '../service/httpclient.service';
+import { Zipcode } from '../zipcode.model';
+
 
 /**
  * @title Stepper that displays errors in the steps
@@ -17,34 +19,18 @@ import { HttpClientService } from '../service/httpclient.service';
   }]
 })
 export class StepperErrorsExampleComponent implements OnInit {
+  zip:Zipcode=new Zipcode("","","","");
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
 
-  stateInfo: any[] = [];
-  countryInfo: any[] = [];
-  cityInfo: any[] = [];
-  constructor(private _formBuilder: FormBuilder, private httpClientService: HttpClientService,private country:CountriesService
+  
+  constructor( private httpClientService: HttpClientService
   ) { }
 
   ngOnInit() {
-    this.getCountries();
-    /*  
- 
-     this.firstFormGroup = this._formBuilder.group({
-       name: ['', Validators.required,Validators.maxLength(5)],
-       email: ['', Validators.required],
-       contact: ['', Validators.required]
-        this.secondFormGroup = this._formBuilder.group({
-      zipcode: ['', Validators.required],
-      city: ['', Validators.required],
-      state: ['', Validators.required],
-      country: ['', Validators.required],
-      agency: ['', Validators.required]
-    });
-    this.thirdFormGroup = this._formBuilder.group({
-      password: ['', Validators.required]
-    }); */
+   
+   
 
     this.firstFormGroup = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.maxLength(5), Validators.minLength(3)]),
@@ -58,28 +44,32 @@ export class StepperErrorsExampleComponent implements OnInit {
       country: new FormControl('',[Validators.required]),
       agency: new FormControl('', [Validators.required])
     });
-    this.thirdFormGroup = this._formBuilder.group({
-      password: ['', Validators.required]
-    });
+    this.thirdFormGroup = new FormGroup({
+      password: new FormControl('',[ Validators.required]),
+      confirmPassword: new FormControl('',[ Validators.required])
 
+    } );
 
     //onchange autopopulate
     this.secondFormGroup.get('zipcode').valueChanges.subscribe(value=>{
-        console.log(value);
-        console.log('Data:', this.countryInfo);
-
-        this.stateInfo = this.countryInfo[value].States;
-        this.cityInfo = this.stateInfo[0].Cities;
-        console.log(this.cityInfo);
+        this.getzipcode(value);
     })
-
+    
 
   }
+   // convenience getter for easy access to form fields
+
+  
   public hasError1 = (controlName: string, errorName: string) => {
     return this.firstFormGroup.controls[controlName].hasError(errorName);
   }
 
-
+getzipcode(value){
+  this.httpClientService.getzipcode(value).subscribe(data=>{
+    this.zip=data;
+   
+  })
+}
 
 
   createCustomer() {
@@ -101,33 +91,6 @@ export class StepperErrorsExampleComponent implements OnInit {
       .subscribe(data => {
         alert("Employee created successfully.");
       })
-  }
-
-
-
-  getCountries() {
-    this.country.allCountries().
-      subscribe(
-        data2 => {
-          this.countryInfo = data2.Countries;
-         // console.log('Data:', this.countryInfo);
-        },
-        err => console.log(err),
-        () => console.log('complete')
-      )
-  }
-
-  onChangeCountry(countryValue) {
-    console.log('Data:', this.countryInfo);
-
-    this.stateInfo = this.countryInfo[countryValue].States;
-    this.cityInfo = this.stateInfo[0].Cities;
-    console.log(this.cityInfo);
-  }
-
-  onChangeState(stateValue) {
-    this.cityInfo = this.stateInfo[stateValue].Cities;
-    //console.log(this.cityInfo);
   }
 
 }

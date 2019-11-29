@@ -29,10 +29,8 @@
         <li>
           <fa name="car"></fa><a href="#"> Help</a>
       </div>
-
-    </ul>
-  </aside>
-  <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
+      <div>
+      <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
     mdbWavesEffect>Launch demo modal</button>
 
   <div style="overflow-y: auto" mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
@@ -53,6 +51,10 @@
       </div>
     </div>
   </div>
+</div>
+    </ul>
+  </aside>
+  
   <main>
     <router-outlet></router-outlet>
   </main>
