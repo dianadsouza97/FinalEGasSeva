@@ -20,7 +20,7 @@ public class OnlineBooking {
 	@Column(name="id")
 	private int id;
 	@Column(name="uuid")
-	private UUID sid;
+	private String sid;
 	@Column(name="name")
 	private String name;
 	@Column(name="contact")
@@ -34,5 +34,6 @@ public class OnlineBooking {
 	@Column(name="city")
 	private String city;
 	@Column(name="zip")
-	private int zip; 
+	private int zip;
+	
 }
