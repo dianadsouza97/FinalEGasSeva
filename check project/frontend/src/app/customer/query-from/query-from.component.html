@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<div class="bg">
+    <div class="container">
+
+        <h2>Technical Support and Query Form </h2>
+        <form [formGroup]="queryform ">
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="name">Full Name : </label>
+                <input [class.is-invalid]="queryform.get('fullName').invalid && queryform.get('fullName').touched  "
+                    type="text" class="form-control" id="name" name="name" formControlName="fullName">
+                <small [class.d-none]="queryform.get('fullName').valid ||
+             queryform.get('fullName').untouched " class="text-danger">Full Name is required.</small>
+            </div>
+
+            <!-- Customer EmailId  -->
+            <div class="form-group">
+                <label for="email">Email : </label>
+                <input [class.is-invalid]="queryform.get('Email').invalid && queryform.get('Email').touched  "
+                    type="email" class="form-control" id="email" id="email" formControlName="Email">
+                <small [class.d-none]="queryform.get('Email').valid ||
+            queryform.get('Email').untouched " class="text-danger"> Email is required.</small>
+            </div>
+
+            <!--div class="invalid-feedback">Please fill out this field.</div>
+            //<div class="valid-feedback">Valid.</div-->
+
+
+            <!--Customer Contact No-->
+            <div class="form-group">
+                <label for="contact">Contact No : </label>
+                <input type="tel" class="form-control" id="contact" name="contact" formControlName="CustomerContactNo">
+            </div>
+
+            <!--Customer Contact No-->
+            <!-- <div class="form-group">
+            <label for="query">How can we help you? </label>
+        </div>
+        <textarea rows="5" cols="155" formControlName="query" name="query">
+                    </textarea> <br><br> -->
+
+            <!-- Frequently asked questions-->
+
+            <div class="form-group">
+                <label for="question">Frequently asked questions ? </label>
+                <div id="answer">
+                    <select>
+                        <option value="question" selected disabled>Select a question</option>
+                        <option value="create">How to create a new account ?</option>
+                        <option value="status">How to track my gas delivery status ?</option>
+                        <option value="cancel">How to cancel my gas booking ?</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+            <label for="question">Others : </label>
+            <div id="text-box">
+                <textarea form="input" id="txtarea1" placeholder="Write your question here..." name="reason_other"
+                    cols="40" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send </button>
+
+        </form>
+
+    </div>
+</div>

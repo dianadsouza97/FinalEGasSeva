@@ -3,9 +3,7 @@ package com.example.demo.service;
 import java.util.UUID;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 
-import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-import { HttpClientService } from './../../service/httpclient.service';
+import { HttpClientService, Employee } from './../../service/httpclient.service';
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormControl, FormGroup} from '@angular/forms';
 import { OnlineBooking } from './online-booking.model';
@@ -10,21 +10,28 @@ import { OnlineBooking } from './online-booking.model';
 export class OnlineBookingComponent implements OnInit {
   constructor( private httpClientService: HttpClientService) { }
 
-  gasbooking = new FormGroup({
-    fullName: new FormControl('', [Validators.required, Validators.maxLength(5), Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required]),
+  cust: Employee = new Employee("", "", "", 0,"","","","","");
 
-    contact: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
-    gasAgency: new FormControl('', [Validators.required]),
+  gasbooking = new FormGroup({
+    fullName: new FormControl({value:'', disabled:true}, [Validators.required]),
+    email: new FormControl({value:'', disabled:true}, [Validators.required]),
+
+    contact:new FormControl({value:'', disabled:true}, [Validators.required]),
+    gasAgency:new FormControl({value:'', disabled:true}, [Validators.required]),
     adhaarNo: new FormControl('', [Validators.required]),
-    country: new FormControl('', [Validators.required]),
-    city: new FormControl('', [Validators.required]),
-    state: new FormControl('', [Validators.required]),
-    zip: new FormControl('', [Validators.required])
+    country:new FormControl({value:'', disabled:true}, [Validators.required]),
+    city:new FormControl({value:'', disabled:true}, [Validators.required]),
+    state:new FormControl({value:'', disabled:true}, [Validators.required]),
+    zip: new FormControl({value:'', disabled:true}, [Validators.required])
 
     
   })
   ngOnInit() {
+    var email="diana@gmail.com";
+    this.httpClientService.getCustomerData(email)
+      .subscribe(data => {
+        this.cust=data;
+      })
 
   }
   sendSms() {
@@ -48,7 +55,7 @@ export class OnlineBookingComponent implements OnInit {
     console.log(onlineBooking);
     this.httpClientService.sendSms(onlineBooking)
       .subscribe(data => {
-        alert("Message sent successfully.");
+        alert("Booked successfully.");
       })
   }
 

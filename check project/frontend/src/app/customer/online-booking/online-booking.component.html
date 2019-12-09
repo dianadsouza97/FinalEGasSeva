@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <br>
+    <h1>Online-Booking </h1>
+    <form [formGroup]=" gasbooking" (ngSubmit)="sendSms() ">
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">Full Name : </label>
+            <input class="form-control" [(ngModel)]="cust.name" formControlName="fullName" required>
+        </div>
+
+
+
+        <!-- Customer EmailId-->
+        <div>
+            <label for="email">Email : </label>
+            <input class="form-control" [(ngModel)]="cust.email" formControlName="email" required>
+        </div>
+
+
+        <!-- Gas Agency -->
+        <div>
+            <label for="agency">Gas Agency : </label>
+            <input class="form-control" [(ngModel)]="cust.agency" formControlName="gasAgency" required>
+        </div>
+
+        <!--Customer Contact No-->
+        <div>
+            <label for="contact">Contact No : </label>
+            <input type=number class="form-control" [(ngModel)]="cust.contact" formControlName="contact" required>
+        </div>
+
+        <!--Adhaar Number-->
+        <div class="form-group">
+            <label for="adhaar">Adhaar no: </label>
+            <input [class.is-invalid]="gasbooking.get('Adhaarno').invalid && gasbooking.get('Adhaarno').touched  "
+                type="number" class="form-control" id="adhaar" name="adhaar" formControlName="Adhaarno">
+            <small [class.d-none]="gasbooking.get('Adhaarno').valid ||
+            gasbooking.get('Adhaarno').untouched " class="text-danger">Adhaar number is required.</small>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <!-- Customer Address -->
+        <div>
+            <h4> Customer Address </h4>
+            <div>
+                <label>
+                    Country:
+                    <input type="text" class="form-control" [(ngModel)]="cust.country" formControlName="country">
+                </label>
+           
+                <label>
+                    City:
+                    <input type="text" class="form-control" [(ngModel)]="cust.city" formControlName="city" name="city">
+                </label>
+           
+                <label>
+                    State:
+                    <input type="text" class="form-control" [(ngModel)]="cust.state" formControlName="state"
+                        name="state">
+                </label>
+            
+                <label>
+                    Zip Code:
+                    <input type="number" class="form-control" [(ngModel)]="cust.zipcode" formControlName="zip"
+                        name="zip">
+                </label>
+
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Book</button>
+
+        <script>
+            // Disable form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+
+    </form>
+
+</div>

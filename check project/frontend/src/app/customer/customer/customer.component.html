@@ -1,0 +1,62 @@
+<link rel="stylesheet" type="text/css">
+
+<body>
+  <!--left  bar-->
+  <aside id="leftNav">
+    <ul>
+      <div>
+        <li>
+          <fa name="home"></fa><a routerLink="registrationStepper"> Dashboard</a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <fa name="users"></fa><a routerLink="gasBooking"> Gas Booking</a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <fa name="line-chart"></fa><a routerLink="transferConnection"> Transfer Connection</a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <fa name="check"></fa><a routerLink="query"> Queries </a>
+        </li>
+      </div>
+      <div>
+        <li>
+          <fa name="car"></fa><a href="#"> Help</a>
+      </div>
+
+    </ul>
+  </aside>
+ <main>
+    <router-outlet></router-outlet>
+  
+  <button type="button" mdbBtn color="primary" class="relative waves-light" (click)="basicModal.show()"
+    mdbWavesEffect>CHATBOT</button>
+  <div class="container">
+    <div style="overflow-y: auto" mdbModal #basicModal="mdbModal" class="modal fade right" tabindex="-1" role="dialog"
+      aria-labelledby="myBasicModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-side modal-bottom-right " role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="modal-header" type="button" class="close pull-right" aria-label="Close"
+              (click)="basicModal.hide()">
+              <span class="hi" aria-hidden="true"> - </span>
+            </button>
+            <h1 class="modal-title w-100" id="myModalLabel"> Welcome to Chat Bot !</h1>
+
+          </div>
+          <hr>
+          <div class="modal-body">
+            <chat-dialog></chat-dialog>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+</body>

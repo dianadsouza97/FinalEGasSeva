@@ -1,0 +1,199 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/*------end of css reset----*/
+
+
+
+/*------header-------*/
+header div span{
+    padding-right: 10px;
+}
+.toolbar{
+    background-color: brown;
+    height: 70px;
+}
+.dashboard{
+  padding-top: 10px;
+    font-weight:bold;
+    font-size: 36px;
+    font-family:  sans-serif;
+}
+
+/*------keft navigation bar-------*/
+#leftNav{
+    float:left;
+    width: 17%;
+    height:100%; 
+}
+#rightNav{
+    float: left;
+    margin-left: 10%;
+    width: 79%;
+    
+    text-align: left;
+    background-color: beige;
+    padding: 35px;
+}
+aside{
+    margin-top: 32px;
+}
+li{
+    list-style-type: none;
+}
+aside div li a{
+    text-decoration-line: none;
+    font-weight:bold;
+    color:black;
+    font-size: 20px;
+    
+}
+aside div{
+  padding: 12px;
+  border-radius: 7px;
+  margin-left: 8px;
+}
+aside div:hover{
+    background-color:#F6917D;
+}
+
+
+
+/*-----card------*/
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .card {
+    border-radius: 15px;
+    border: 1px solid #eee;
+    background-color: #fafafa;
+    margin: 15px 15px 7px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    line-height: 24px;
+    height: 400px; 
+  }
+  #card1{
+    
+    width: 730px;
+    
+  }
+  #card2{
+   
+    width: 515px;
+  }
+
+
+  .card-container .card:not(:last-child) {
+    margin-right: 0;
+  }
+
+  #card-small {
+    height: 120px;
+    width: 303px;
+  }
+
+  .card-container .card:not(.highlight-card) {
+    cursor: pointer;
+  }
+
+  .card-container .card:not(.highlight-card):hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 17px rgba(black, 0.35);
+  }
+
+  .card-container .card:not(.highlight-card):hover .material-icons path {
+    fill: rgb(105, 103, 103);
+  }
+
+  .card.highlight-card {
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    border: none;
+    width: auto;
+    min-width: 30%;
+    position: relative;
+  }
+
+  .card.card.highlight-card span {
+    margin-left: 60px;
+  }
+
+/* Responsive Styles */
+@media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+  

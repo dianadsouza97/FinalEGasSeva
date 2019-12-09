@@ -1,0 +1,80 @@
+<h3>Cart</h3>
+
+<!-- <div *ngIf="totalSum>0; else cartEmpty">
+  <div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name }}</span>
+    <span>{{ item.price | currency: 'INR' }}</span>
+    <div class="col-6">
+      <input type="number" value="{{item.quantity}}" #quant>
+      <input type="hidden" value="{{item.id}}" #prod>
+
+    </div>
+    <button class="btn btn-info btn-sm" (click)="update(prod,quant)">Update</button>
+    <button class="btn btn-danger" (click)="removeItemFromCart(item)">Remove</button>  
+  </div>
+  <br/>
+  <div >
+
+    <span><strong>Total : </strong>{{total | currency: 'INR'}}</span>
+  </div>
+</div>
+<ng-template #cartEmpty>
+  Cart is Empty
+</ng-template>
+<br/>
+<span> <button (click)="onBack()" class="btn btn-primary">Continue Shopping</button></span> -->
+
+<div class="container" *ngIf="totalSum>0; else cartEmpty">
+  <br>
+  <a (click)="accessories" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue Shopping</a><br>
+  <p style="padding-top: 10px"> To change Quantity, Edit Quantity and Click on Update button</p>
+  <table id="cart" class="table table-hover table-condensed table-borderless">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tr *ngFor="let cart of items">
+      <td>
+        {{cart.name}}
+      </td>
+      <td>{{cart.price | currency:'INR'}}</td>
+      <td>
+
+        <div class="row">
+          <div class="col-6">
+            <input type="number" value="{{cart.quantity}}" #quant>
+            <input type="hidden" value="{{cart.id}}" #prod>
+          </div>
+          <div class="col-6">
+            <button class="btn btn-info btn-sm" (click)="update(prod,quant)">Update</button>
+          </div>
+        </div>
+      </td>
+      <td>
+        {{cart.quantity*cart.price | currency:'INR'}}
+
+      </td>
+      <td>
+        <!-- <button class="btn btn-info btn-sm" (click)="removeItemFromCart(cart)">Delete</button> -->
+        <button class="btn btn-info btn-sm" (click)="delete(prod)">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <div class="row">
+    <!-- <div class="col-9">Total  : {{total | currency:'INR'}}</div> -->
+    <div class="col-9">Total Sum : {{totalSum | currency:'USD'}}</div>
+    <div class="offset-1 col-2"><button type="button" class="btn btn-primary align-right" (click)="place()">Checkout <i
+          class="fa fa-angle-right"></i></button></div>
+
+  </div>
+
+</div>
+<ng-template #cartEmpty>
+  Cart is Empty
+</ng-template>

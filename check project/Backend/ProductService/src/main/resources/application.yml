@@ -1,0 +1,12 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  data:
+    mongodb:
+      database: products
+      host: 127.0.0.1
+      port: 27017
+server:
+  port: 3002
+  

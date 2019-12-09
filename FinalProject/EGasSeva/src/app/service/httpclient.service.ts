@@ -1,3 +1,4 @@
+
 import { Phone } from './../customer/online-booking/phone.model';
 import { OnlineBooking } from './../customer/online-booking/online-booking.model';
 import { Zipcode } from './../zipcode.model';
@@ -16,7 +17,7 @@ export class Employee {
     public state: string,
     public country: string,
     public agency: string,
-    public password: string
+    public password:string
   ) { }
 }
 
@@ -29,8 +30,6 @@ export class HttpClientService {
     private httpClient: HttpClient
   ) {
   }
-
-
 
 
 
@@ -57,6 +56,12 @@ export class HttpClientService {
     let basicString = 'Basic ' + window.btoa(username + ':' + password)
     return basicString;
   }
+
+  
+getCustomerData(email){
+  return this.httpClient.get<Employee>("http://localhost:8083/getCustomerData"+"/"+email);
+}
+
   sendSms(onlineBooking) {
     let message = "Registration successful";
     var num = onlineBooking.contact;

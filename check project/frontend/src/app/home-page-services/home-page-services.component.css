@@ -1,0 +1,1226 @@
+/******************************/
+
+/*     01. General Styles     */
+
+/******************************/
+
+body, html {
+  width: 100%;
+  height: 100%;
+}
+
+body, p {
+  color: #626262;
+  font: 400 0.875rem/1.375rem "Raleway", sans-serif;
+}
+
+.p-large {
+  font: 400 1rem/1.5rem "Raleway", sans-serif;
+}
+
+.p-small {
+  font: 400 0.75rem/1.25rem "Raleway", sans-serif;
+}
+
+.p-heading {
+  margin-bottom: 3.875rem;
+}
+
+.li-space-lg li {
+  margin-bottom: 0.25rem;
+}
+
+.indent {
+  padding-left: 1.25rem;
+}
+
+h1 {
+  color: #393939;
+  font: 700 3rem/3.5rem "Raleway", sans-serif;
+}
+
+h2 {
+  color: #393939;
+  font: 700 2.25rem/2.75rem "Raleway", sans-serif;
+}
+
+h3 {
+  color: #393939;
+  font: 700 1.75rem/2rem "Raleway", sans-serif;
+}
+
+h4 {
+  color: #393939;
+  font: 700 1.375rem/1.875rem "Raleway", sans-serif;
+}
+
+h5 {
+  color: #393939;
+  font: 700 1.125rem/1.625rem "Raleway", sans-serif;
+}
+
+h6 {
+  color: #393939;
+  font: 700 1rem/1.5rem "Raleway", sans-serif;
+}
+
+a {
+  color: #626262;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #626262;
+  text-decoration: underline;
+}
+
+a.turquoise {
+  color: #00bfd8;
+}
+
+a.white {
+  color: #fff;
+}
+
+.testimonial-text {
+  font: italic 400 1rem/1.5rem "Raleway", sans-serif;
+}
+
+.testimonial-author {
+  font: 700 1rem/1.5rem "Raleway", sans-serif;
+}
+
+.turquoise {
+  color: #00bfd8;
+}
+
+.btn-solid-reg {
+  display: inline-block;
+  padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
+  border: 0.125rem solid #00bfd8;
+  border-radius: 2rem;
+  background-color: #00bfd8;
+  color: #fff;
+  font: 700 0.75rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-solid-reg:hover {
+  background-color: transparent;
+  color: #00bfd8;
+  text-decoration: none;
+}
+
+.btn-solid-lg {
+  display: inline-block;
+  padding: 1.375rem 2.625rem 1.375rem 2.625rem;
+  border: 0.125rem solid #00bfd8;
+  border-radius: 2rem;
+  background-color: #00bfd8;
+  color: #fff;
+  font: 700 0.75rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-solid-lg:hover {
+  background-color: transparent;
+  color: #00bfd8;
+  text-decoration: none;
+}
+
+.btn-outline-reg {
+  display: inline-block;
+  padding: 1.1875rem 2.125rem 1.1875rem 2.125rem;
+  border: 0.125rem solid #00bfd8;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #00bfd8;
+  font: 700 0.75rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline-reg:hover {
+  background-color: #00bfd8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-outline-lg {
+  display: inline-block;
+  padding: 1.375rem 2.625rem 1.375rem 2.625rem;
+  border: 0.125rem solid #00bfd8;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #00bfd8;
+  font: 700 0.75rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline-lg:hover {
+  background-color: #00bfd8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-outline-sm {
+  display: inline-block;
+  padding: 1rem 1.625rem 0.875rem 1.625rem;
+  border: 0.125rem solid #00bfd8;
+  border-radius: 2rem;
+  background-color: transparent;
+  color: #00bfd8;
+  font: 700 0.625rem/0 "Raleway", sans-serif;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-outline-sm:hover {
+  background-color: #00bfd8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.form-group.has-error.has-danger {
+  margin-bottom: 0.625rem;
+}
+
+.form-group.has-error.has-danger .help-block.with-errors ul {
+  margin-top: 0.375rem;
+}
+
+.label-control {
+  position: absolute;
+  top: 0.87rem;
+  left: 1.375rem;
+  color: #626262;
+  opacity: 1;
+  font: 400 0.875rem/1.375rem "Raleway", sans-serif;
+  cursor: text;
+  transition: all 0.2s ease;
+}
+
+/* IE10+ hack to solve lower label text position compared to the rest of the browsers */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .label-control {
+    top: 0.9375rem;
+  }
+}
+
+.form-control-input:focus+.label-control, .form-control-input.notEmpty+.label-control, .form-control-textarea:focus+.label-control, .form-control-textarea.notEmpty+.label-control {
+  top: 0.125rem;
+  opacity: 1;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.form-control-input, .form-control-select {
+  display: block;
+  /* needed for proper display of the label in Firefox, IE, Edge */
+  width: 100%;
+  padding-top: 1.0625rem;
+  padding-bottom: 0.0625rem;
+  padding-left: 1.3125rem;
+  border: 1px solid #c4d8dc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #626262;
+  font: 400 0.875rem/1.875rem "Raleway", sans-serif;
+  transition: all 0.2s;
+  -webkit-appearance: none;
+  /* removes inner shadow on form inputs on ios safari */
+}
+
+.form-control-select {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 3rem;
+}
+
+/* IE10+ hack to solve lower label text position compared to the rest of the browsers */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  .form-control-input {
+    padding-top: 1.25rem;
+    padding-bottom: 0.75rem;
+    line-height: 1.75rem;
+  }
+  .form-control-select {
+    padding-top: 0.875rem;
+    padding-bottom: 0.75rem;
+    height: 3.125rem;
+    line-height: 2.125rem;
+  }
+}
+
+select::-ms-expand {
+  display: none;
+  /* removes the ugly default down arrow on select form field in IE11 */
+}
+
+.form-control-textarea {
+  display: block;
+  /* used to eliminate a bottom gap difference between Chrome and IE/FF */
+  width: 100%;
+  height: 8rem;
+  /* used instead of html rows to normalize height between Chrome and IE/FF */
+  padding-top: 1.25rem;
+  padding-left: 1.3125rem;
+  border: 1px solid #c4d8dc;
+  border-radius: 0.25rem;
+  background-color: #fff;
+  color: #626262;
+  font: 400 0.875rem/1.75rem "Raleway", sans-serif;
+  transition: all 0.2s;
+}
+
+.form-control-input:focus, .form-control-select:focus, .form-control-textarea:focus {
+  border: 1px solid #a1a1a1;
+  outline: none;
+  /* Removes blue border on focus */
+}
+
+.form-control-input:hover, .form-control-select:hover, .form-control-textarea:hover {
+  border: 1px solid #a1a1a1;
+}
+
+.checkbox {
+  font: 400 0.75rem/1.25rem "Raleway", sans-serif;
+}
+
+input[type='checkbox'] {
+  vertical-align: -15%;
+  margin-right: 0.375rem;
+}
+
+/* IE10+ hack to raise checkbox field position compared to the rest of the browsers */
+
+@media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+  input[type='checkbox'] {
+    vertical-align: -9%;
+  }
+}
+
+.form-control-submit-button {
+  display: inline-block;
+  width: 100%;
+  height: 3.125rem;
+  border: 1px solid #00bfd8;
+  border-radius: 1.5rem;
+  background-color: #00bfd8;
+  color: #fff;
+  font: 700 0.75rem/1.75rem "Raleway", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.form-control-submit-button:hover {
+  background-color: transparent;
+  color: #00bfd8;
+}
+
+/* Form Success And Error Message Formatting */
+
+#rmsgSubmit.h3.text-center.tada.animated, #cmsgSubmit.h3.text-center.tada.animated, #pmsgSubmit.h3.text-center.tada.animated, #rmsgSubmit.h3.text-center, #cmsgSubmit.h3.text-center, #pmsgSubmit.h3.text-center {
+  display: block;
+  margin-bottom: 0;
+  color: #626262;
+  font: 400 1.125rem/1rem "Raleway", sans-serif;
+}
+
+.help-block.with-errors .list-unstyled {
+  color: #626262;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  text-align: left;
+}
+
+.help-block.with-errors ul {
+  margin-bottom: 0;
+}
+
+/* end of form success and error message formatting */
+
+/* Form Success And Error Message Animation - Animate.css */
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  10%, 20% {
+    -webkit-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    -ms-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    -ms-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* end of form success and error message animation - Animate.css */
+
+/* Fade-move Animation For Lightbox - Magnific Popup */
+
+/* at start */
+
+.my-mfp-slide-bottom .zoom-anim-dialog {
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  -webkit-transform: translateY(-1.25rem) perspective(37.5rem) rotateX(10deg);
+  -ms-transform: translateY(-1.25rem) perspective(37.5rem) rotateX(10deg);
+  transform: translateY(-1.25rem) perspective(37.5rem) rotateX(10deg);
+}
+
+/* animate in */
+
+.my-mfp-slide-bottom.mfp-ready .zoom-anim-dialog {
+  opacity: 1;
+  -webkit-transform: translateY(0) perspective(37.5rem) rotateX(0);
+  -ms-transform: translateY(0) perspective(37.5rem) rotateX(0);
+  transform: translateY(0) perspective(37.5rem) rotateX(0);
+}
+
+/* animate out */
+
+.my-mfp-slide-bottom.mfp-removing .zoom-anim-dialog {
+  opacity: 0;
+  -webkit-transform: translateY(-0.625rem) perspective(37.5rem) rotateX(10deg);
+  -ms-transform: translateY(-0.625rem) perspective(37.5rem) rotateX(10deg);
+  transform: translateY(-0.625rem) perspective(37.5rem) rotateX(10deg);
+}
+
+/* dark overlay, start state */
+
+.my-mfp-slide-bottom.mfp-bg {
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+/* animate in */
+
+.my-mfp-slide-bottom.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+
+/* animate out */
+
+.my-mfp-slide-bottom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+/* end of fade-move animation for lightbox - magnific popup */
+
+/* Fade Animation For Image Slider - Magnific Popup */
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 0.6s;
+  animation: fadeIn 0.6s;
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 0.8s;
+  animation: fadeOut 0.8s;
+}
+
+/* end of fade animation for image slider - magnific popup */
+
+/*************************/
+
+/*     02. Preloader     */
+
+/*************************/
+
+.spinner-wrapper {
+  position: fixed;
+  z-index: 999999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  /* centers the loading animation vertically one the screen */
+  left: 50%;
+  /* centers the loading animation horizontally one the screen */
+  width: 3.75rem;
+  height: 1.25rem;
+  margin: -0.625rem 0 0 -1.875rem;
+  /* is width and height divided by two */
+  text-align: center;
+}
+
+.spinner>div {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  background-color: #00bfd8;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1.0);
+  }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1.0);
+    -ms-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+
+/**************************/
+
+/*     03. Navigation     */
+
+/**************************/
+
+.navbar-custom {
+  background-color: #fff;
+  box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+  font: 600 1.25rem "Raleway", sans-serif;
+  transition: all 0.2s;
+}
+
+.navbar-custom .navbar-brand.logo-text {
+  font: 600 2rem/1.5rem "Raleway", sans-serif;
+  color: #393939;
+  text-decoration: none;
+}
+
+.navbar-custom .navbar-nav {
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.navbar-custom .nav-item .nav-link {
+  padding: 0.625rem 0.75rem 0.625rem 0.75rem;
+  color: #393939;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.navbar-custom .nav-item .nav-link:hover, .navbar-custom .nav-item .nav-link.active {
+  color: #00bfd8;
+}
+
+.navbar-custom .navbar-toggler {
+  border: none;
+  color: #393939;
+  font-size: 2 rem;
+}
+
+.navbar-custom button[aria-expanded='false'] .navbar-toggler-awesome.fas.fa-times {
+  display: none;
+}
+
+.navbar-custom button[aria-expanded='false'] .navbar-toggler-awesome.fas.fa-bars {
+  display: inline-block;
+}
+
+.navbar-custom button[aria-expanded='true'] .navbar-toggler-awesome.fas.fa-bars {
+  display: none;
+}
+
+.navbar-custom button[aria-expanded='true'] .navbar-toggler-awesome.fas.fa-times {
+  display: inline-block;
+  margin-right: 0.125rem;
+}
+
+/*********************/
+
+/*    04. Header     */
+
+/*********************/
+
+.header {
+  background-color: #fff;
+}
+
+.header .header-content {
+  padding-top: 8rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+
+.header .text-container {
+  margin-bottom: 4rem;
+}
+
+.header h1 {
+  margin-bottom: 1.125rem;
+  font-size: 2.5rem;
+  line-height: 3.125rem;
+}
+
+.header .p-large {
+  margin-bottom: 1.875rem;
+}
+
+/***********************/
+
+/*     10. Pricing     */
+
+/***********************/
+
+.cards-2 {
+  margin-top: 50px;
+  padding-top: 5rem;
+  padding-bottom: 2.75rem;
+  text-align: center;
+}
+
+.cards-2 h2 {
+  margin-bottom: 1rem;
+}
+
+.cards-2 .card {
+  display: block;
+  max-width: 19.5rem;
+  margin-right: auto;
+  margin-bottom: 6rem;
+  margin-left: auto;
+  border: 1px solid #c4d8dc;
+  border-radius: 0.5rem;
+  vertical-align: top;
+}
+
+.cards-2 .card .card-body {
+  padding: 2.5rem 2.75rem 1.875rem 2.5rem;
+}
+
+
+.cards-2 .card .card-title {
+  margin-bottom: 0.625rem;
+  color: #393939;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  text-align: center;
+}
+
+.cards-2 .card .card-subtitle {
+  margin-bottom: 1.75rem;
+}
+
+.cards-2 .card .cell-divide-hr {
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  border: none;
+  background-color: #c4d8dc;
+}
+
+.cards-2 .card .price {
+  padding-top: 0.875rem;
+  padding-bottom: 1.5rem;
+}
+
+.cards-2 .card .value {
+  color: #00bfd8;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 4rem;
+  text-align: center;
+}
+
+.cards-2 .card .currency {
+  margin-right: 0.375rem;
+  color: #00bfd8;
+  font-size: 1.5rem;
+  vertical-align: 56%;
+}
+
+.cards-2 .card .frequency {
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.cards-2 .card .list-unstyled {
+  margin-top: 1.875rem;
+  margin-bottom: 1.625rem;
+  text-align: left;
+}
+
+.cards-2 .card .list-unstyled.li-space-lg li {
+  margin-bottom: 0.5rem;
+}
+
+.cards-2 .card .list-unstyled .fas {
+  color: #00bfd8;
+  line-height: 1.375rem;
+}
+
+.cards-2 .card .list-unstyled .fas.fa-times {
+  margin-left: 0.1875rem;
+  margin-right: 0.125rem;
+  color: #777b7e;
+}
+
+.cards-2 .card .list-unstyled .media-body {
+  margin-left: 0.625rem;
+}
+
+.cards-2 .card .button-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: -1.25rem;
+  left: 0;
+  text-align: center;
+}
+
+.cards-2 .card .btn-solid-reg:hover {
+  background-color: #fff;
+}
+
+/* Best Value Label */
+
+.cards-2 .card .label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10.625rem;
+  height: 10.625rem;
+  overflow: hidden;
+}
+
+.cards-2 .card .label .best-value {
+  position: relative;
+  width: 13.75rem;
+  padding: 0.3125rem 0 0.3125rem 4.125rem;
+  background-color: #00bfd8;
+  color: #fff;
+  -webkit-transform: rotate(45deg) translate3d(0, 0, 0);
+  -ms-transform: rotate(45deg) translate3d(0, 0, 0);
+  transform: rotate(45deg) translate3d(0, 0, 0);
+}
+
+/* end of best value label */
+
+.bg {
+  /* The image used */
+  background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png");
+  /* Full height */
+  height: 100%;
+  width: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: repeat;
+}
+
+/*************************/
+
+/*     17. Copyright     */
+
+/*************************/
+
+.copyright {
+  padding-top: 1rem;
+  padding-bottom: 0.375rem;
+  text-align: center;
+}
+
+.copyright .p-small {
+  padding-top: 1.375rem;
+  border-top: 1px solid #c4d8dc;
+  opacity: 0.7;
+}
+
+/**********************************/
+
+/*     18. Back To Top Button     */
+
+/**********************************/
+
+/***************************/
+
+/*     19. Extra Pages     */
+
+/***************************/
+
+.ex-basic-1 {
+  padding-top: 2rem;
+  padding-bottom: 0.875rem;
+  background-color: #f7fcfd;
+}
+
+.ex-basic-1 .breadcrumbs {
+  margin-bottom: 1.125rem;
+}
+
+.ex-basic-1 .breadcrumbs .fa {
+  margin-right: 0.5rem;
+  margin-left: 0.625rem;
+}
+
+/*****************************/
+
+/*     20. Media Queries     */
+
+/*****************************/
+
+/* Min-width width 768px */
+
+@media (min-width: 768px) {
+  /* General Styles */
+  .p-heading {
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  /* end of general styles */
+  /* Header */
+  .header .header-content {
+    padding-top: 10.5rem;
+  }
+  .header h1 {
+    font-size: 2rem;
+    line-height: 3.5rem;
+  }
+  /* end of header */
+}
+
+/* end of min-width width 768px */
+
+/* Min-width width 992px */
+
+@media (min-width: 992px) {
+  /* Navigation */
+  nav.navbar.navbar-expand-lg.bg-white.navbar-dark.navbar-custom.fixed-top {
+    padding: 20px;
+  }
+  .navbar-custom {
+    padding: 2.125rem 1.5rem 2.125rem 2rem;
+    box-shadow: none;
+    background: transparent;
+  }
+  .navbar-custom .navbar-nav {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .navbar-custom .nav-item .nav-link {
+    padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+    color: black;
+    opacity: 0.8;
+  }
+  .navbar-custom .nav-item .nav-link:hover, .navbar-custom .nav-item .nav-link.active {
+    color: darkblue;
+    opacity: 1;
+  }
+  .navbar-custom.top-nav-collapse {
+    padding: 0.5rem 1.5rem 0.5rem 2rem;
+    box-shadow: 0 0.0625rem 0.375rem 0 rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  .navbar-custom.top-nav-collapse .nav-item .nav-link {
+    color: #393939;
+    opacity: 1;
+  }
+  .navbar-custom.top-nav-collapse .nav-item .nav-link:hover, .navbar-custom.top-nav-collapse .nav-item .nav-link.active {
+    color: #00bfd8;
+  }
+  .navbar-custom .dropdown-menu {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 0.75rem solid rgba(0, 0, 0, 0);
+    border-radius: 0.25rem;
+  }
+  .navbar-custom.top-nav-collapse .dropdown-menu {
+    border-top: 0.5rem solid rgba(0, 0, 0, 0);
+    box-shadow: 0 0.375rem 0.375rem 0 rgba(0, 0, 0, 0.02);
+  }
+  .navbar-custom .dropdown-item {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  .navbar-custom .dropdown-items-divide-hr {
+    width: 84%;
+  }
+  .navbar-custom .social-icons {
+    display: block;
+    margin-left: 0.5rem;
+  }
+  .navbar-custom .fa-stack {
+    margin-bottom: 0.1875rem;
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+  }
+  .navbar-custom .fa-stack-2x {
+    color: #00bfd8;
+    transition: all 0.2s ease;
+  }
+  .navbar-custom .fa-stack-1x {
+    color: #fff;
+    transition: all 0.2s ease;
+  }
+  .navbar-custom .fa-stack:hover .fa-stack-2x {
+    color: #fff;
+  }
+  .navbar-custom .fa-stack:hover .fa-stack-1x {
+    color: #00bfd8;
+  }
+  .navbar-custom.top-nav-collapse .fa-stack-2x {
+    color: #00bfd8;
+  }
+  .navbar-custom.top-nav-collapse .fa-stack-1x {
+    color: #fff;
+  }
+  .navbar-custom.top-nav-collapse .fa-stack:hover .fa-stack-2x {
+    color: #00a7bd;
+  }
+  .navbar-custom.top-nav-collapse .fa-stack:hover .fa-stack-1x {
+    color: #fff;
+  }
+  /* end of navigation */
+  /* General Styles */
+  .p-heading {
+    width: 65%;
+  }
+  /* end of general styles */
+  /* Header */
+  .header {
+    background: url('src/assets/images/header-background.jpg') center center no-repeat;
+    background-size: cover;
+  }
+  .header .header-content {
+    padding-top: 11.5rem;
+    text-align: left;
+  }
+  .header .text-container {
+    margin-top: 3rem;
+    margin-bottom: 0;
+  }
+  /* end of header */
+  .img-fluid {
+    max-width: 100%;
+    height: 250px;
+  }
+  .img-fluid1 {
+    max-width: 100%;
+    height: 400px;
+    background: url('/src/assets/images/details-1-office-worker.svg');
+  }
+  /* Details 1 */
+  .basic-1 .text-container {
+    margin-top: 3.875rem;
+    margin-bottom: 0;
+  }
+  /* end of details 1 */
+  /* Details Lightboxes */
+  .lightbox-basic {
+    max-width: 62.5rem;
+    padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+  }
+  .lightbox-basic .image-container {
+    max-width: 100%;
+    margin-right: 2rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
+  .lightbox-basic h3 {
+    margin-top: 0.5rem;
+  }
+  /* end of details lightboxes */
+  /* Pricing */
+  .cards-2 .card {
+    display: inline-block;
+    width: 17.125rem;
+    max-width: 100%;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+  /* end of pricing */
+  /* Request */
+  .form-1 {
+    padding-top: 7.5rem;
+  }
+  .form-1 .text-container {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+  /* end of request */
+}
+
+/* end of min-width width 992px */
+
+/* Min-width width 1200px */
+
+@media (min-width: 1200px) {
+  /* Navigation */
+  .navbar-custom {
+    padding: 2.125rem 5rem 2.125rem 5rem;
+  }
+  .navbar-custom.top-nav-collapse {
+    padding: 0.5rem 5rem 0.5rem 5rem;
+  }
+  /* end of navigation */
+  /* General Styles */
+  .p-heading {
+    width: 55%;
+  }
+  /* end of general styles */
+  /* Header */
+  .header .header-content {
+    padding-top: 12.5rem;
+  }
+  .header .text-container {
+    margin-top: 5.375rem;
+    margin-left: 1rem;
+    margin-right: 2rem;
+  }
+  .header .image-container {
+    margin-left: 2rem;
+    margin-right: 1rem;
+  }
+  /* end of header */
+  /* Details 1 */
+  .basic-1 .text-container {
+    margin-top: 6.125rem;
+    margin-right: 4rem;
+    margin-left: 1rem;
+  }
+  #office-worker {
+    background: url('src/assets/images/header-background.jpg');
+  }
+  /* end of details 1 */
+  /* Pricing */
+  .cards-2 .card {
+    width: 19.5rem;
+    margin-right: 1.625rem;
+    margin-left: 1.625rem;
+  }
+  /* end of pricing */
+}
+
+.fa-gas-pump:before {
+  content: "\f52f";
+}
+
+.dark-modal .close {
+  color: white;
+}
+
+.light-blue-backdrop {
+  background-color: #d3d8dd;
+}
+
+#modal-text {
+  text-align: justify;
+  font-size: 16px;
+  color: black;
+  text-shadow: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+#myModalLabel {
+  text-align: justify;
+  align-content: center;
+}
+
+#myImg1 {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: transform .2s;
+  /* Animation */
+  width: 470px;
+  height: 250px;
+}
+
+#myImg2 {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 475px;
+  height: 320px;
+}
+
+#myImg3 {
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 470px;
+  height: 250px;
+  border: black;
+  border-style: hidden;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+.modal-body:hover {
+  transition: 0.4s;
+}
+
+#myImg1:hover {
+  transform: scale(1.2);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#myImg2:hover {
+  transform: scale(1.2);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+#myImg3:hover {
+  transform: scale(1.2);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.card:hover{
+  transform: scale(1.1);
+  box-shadow:1px 1px 1px 1px;
+}
+
+.media-body {
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  text-shadow: black;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.heading {
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  text-shadow: black;
+  padding-bottom: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 30px;
+}
+
+.modal-title{
+  font-weight:400;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  align-content: center;
+  font-size:20px;
+}
+

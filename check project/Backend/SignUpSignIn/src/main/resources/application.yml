@@ -1,0 +1,7 @@
+Server:
+  port: 5001
+  
+spring:  datasource:    url: jdbc:mysql://database-1.cskxmd3bbixc.us-east-2.rds.amazonaws.com/project?useSSL=false&serverTimezone=UTC
+    username: root
+    password: pass$1234  data:    mongodb:      uri: mongodb+srv://mongodbuser:mongodbuser@cluster0-gp4w1.mongodb.net/zipcode?retryWrites=true&w=majority
+    

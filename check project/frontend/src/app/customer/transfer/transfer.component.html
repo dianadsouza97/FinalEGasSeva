@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<div class="container">
+    <br>
+    <h1>Transfer Connection </h1>
+    <form [formGroup]=" gasbooking" (ngSubmit)="transferConnection() ">
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="name">Full Name : </label>
+            <input class="form-control" [(ngModel)]="cust.name" formControlName="fullName" required>
+        </div>
+        <!-- Customer EmailId-->
+        <div class="form-group">
+            <label for="email">Email : </label>
+            <input class="form-control" [(ngModel)]="cust.email" formControlName="email" required>
+        </div>
+        <!--Customer Contact No-->
+        <div class="form-group">
+            <label for="contact">Contact No : </label>
+            <input type=number class="form-control" [(ngModel)]="cust.contact" formControlName="contact" required>
+        </div>
+        <div class="form-group">
+            <label for="adhaar">Adhaar no: </label>
+            <input [class.is-invalid]="gasbooking.get('Adhaarno').invalid && gasbooking.get('Adhaarno').touched  " type="number" class="form-control" id="adhaar" name ="adhaar"formControlName="adhaarNo" >
+            <small [class.d-none]="gasbooking.get('Adhaarno').valid ||
+            gasbooking.get('Adhaarno').untouched " class="text-danger">Adhaar number is required.</small>
+        </div>
+        <!-- Gas Agency -->
+        <div class="form-group">
+            <label for="Agency">Current Gas Agency : </label>
+            <input class="form-control" [(ngModel)]="cust.agency" formControlName="gasAgency" required>
+        </div>
+
+
+        <!-- Customer Address -->
+        <div>
+            <h4> Customer Old Address </h4>
+            <div class="form-group">
+                <label>
+                    Zip Code:
+                    <input type="number" class="form-control" [(ngModel)]="cust.zipcode" formControlName="zip">
+                </label>
+
+                <label>
+                    Country:
+                    <input type="text" class="form-control" [(ngModel)]="cust.country" formControlName="country"
+                        name="country">
+                </label>
+                <!-- </div>
+    
+                <div class="form-group"> -->
+                <label>
+                    City:
+                    <input type="text" class="form-control" [(ngModel)]="cust.city" formControlName="city" name="city">
+                </label>
+                <!-- </div>
+    
+                <div class="form-group"> -->
+                <label>
+                    State:
+                    <input type="text" class="form-control" [(ngModel)]="cust.state" formControlName="state"
+                        name="state"> </label>
+                <!-- </div>
+    
+                <div class="form-group"> -->
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Customer Address -->
+        <div>
+            <h4> Customer New Address </h4>
+            <div class="form-group">
+                <label>
+                    Zip Code:
+                    <input type="number" class="form-control" formControlName="newZip" name="zip" required>
+                </label>
+
+                <label>
+                    Country:
+                    <input type="text" class="form-control" [(ngModel)]="zip.country" formControlName="newCountry" name="street">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+                <label>
+                    State:
+                    <input type="text" class="form-control" [(ngModel)]="zip.state" formControlName="newState" name="state">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+                <label>
+                    City:
+                    <input type="text" class="form-control" [(ngModel)]="zip.city" formControlName="newCity" name="city">
+                </label>
+                <!-- </div>
+        
+                    <div class="form-group"> -->
+
+
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="newAgency">New Gas Agency : </label>
+            <input type="text" class="form-control" [(ngModel)]="zip.dealer" formControlName="newAgency" >
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Transfer</button>
+
+        <script>
+            // Disable form submissions if there are invalid fields
+            (function () {
+                'use strict';
+                window.addEventListener('load', function () {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName('needs-validation');
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function (form) {
+                        form.addEventListener('submit', function (event) {
+                            if (form.checkValidity() === false) {
+                                event.preventDefault();
+                                event.stopPropagation();
+                            }
+                            form.classList.add('was-validated');
+                        }, false);
+                    });
+                }, false);
+            })();
+        </script>
+
+    </form>
+
+</div>

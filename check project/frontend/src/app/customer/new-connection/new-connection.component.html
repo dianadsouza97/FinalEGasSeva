@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+<div class="container">
+    <br>
+        <h1>New LPG Gas Connection Form </h1>
+    <form [formGroup]=" newconnection" (ngSubmit)="onSubmit() " class="needs-validation" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+                <label for="name">Full Name    : </label>
+                <input [class.is-invalid]="newconnection.get('fullName').invalid && newconnection.get('fullName').touched  " type="text" class="form-control" id="name"name="name" >
+                <small [class.d-none]="newconnection.get('fullName').valid ||
+                newconnection.get('fullName').untouched " class="text-danger">Full Name is required.</small>
+            </div>
+    
+        <!-- Date of Birth -->
+        <div class="form-group">
+            <label for="DOB">Date of Birth : </label>
+            <input type="date" class="form-control" id="date " name="date" formControlName="Dob">
+        </div>
+
+        <!-- Customer EmailId-->
+        <div class="form-group">
+                <label for="email">Email : </label>
+                <input [class.is-invalid]="newconnection.get('Email').invalid && newconnection.get('Email').touched  "
+                type="email" class="form-control" id="email" name="email" formControlName="Email">
+            <small [class.d-none]="newconnection.get('Email').valid ||
+            newconnection.get('Email').untouched " class="text-danger"> Email is required.</small>
+          
+          </div>
+
+
+
+        <!-- Distributor -->
+        <div class="form-group">
+            <div class="dropdown">
+                <label for="distributor">Distributor : </label>
+                <input   type="text" class="form-control" id="distributor" name="distributor"formControlName="Distributor"
+                    data-toggle="dropdown">
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Link 1</a>
+                    <a class="dropdown-item" href="#">Link 2</a>
+                    <a class="dropdown-item" href="#">Link 3</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <!--Customer Contact No-->
+        <div class="form-group">
+            <label for="contact">Contact No : </label>
+            <input
+                [class.is-invalid]="newconnection.get('CustomerContactNo').invalid && newconnection.get('CustomerContactNo').touched"
+                type="tel" class="form-control" id="contact"  name="contact" formControlName="CustomerContactNo">
+        </div>
+
+        <!--state-->
+        <div class="form-group">
+            <label for="state">State : </label>
+            <input type="text" class="form-control" formControlName="State" name="state">
+        </div>
+
+        <!--state-->
+        <div class="form-group">
+            <label for="state">District : </label>
+            <input type="text" class="form-control" formControlName="District" name="district">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Book</button>
+
+    </form>
+</div>

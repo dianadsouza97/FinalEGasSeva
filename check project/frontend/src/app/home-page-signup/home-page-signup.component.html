@@ -1,0 +1,74 @@
+<div class="bg">
+  <!-- Details 1 -->
+  <div id="signup">
+    <div class="basic-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="text-container">
+              <h2>Sign Up</h2>
+              <div class="form-container">
+                <form id="requestForm" data-toggle="validator" data-focus="false">
+                  <div class="form-group">
+                    <input type="text" class="form-control-input" id="username" name="username"
+                      [(ngModel)]="user.username" required>
+                    <label class="label-control" for="username">Full name</label>
+
+                  </div>
+                  <div class="form-group">
+                    <input type="email" class="form-control-input" id="email" name="email" [(ngModel)]="user.email"
+                      required>
+                    <label class="label-control" for="email">Email</label>
+                    <div class="help-block with-errors">
+                      <div *ngIf="message=='Email a lready exists'" class="help-block with-errors">
+                        <span class="error">{{message}}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="label-control" for="customerType">Registered as:</label>
+                    <select name="customerType" class="form-control-input" [(ngModel)]="user.customerType" required>
+                      <option value="customer" disabled>Select a customer type</option>
+                      <option value="regular">Regular Customer</option>
+                      <option value="dealer">Dealer</option>
+                    </select>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" [(ngModel)]="user.isEnabled" name="isEnabled" class="form-control"
+                      id="isEnabled" value='1'>
+                  </div>
+                  <div class="form-group">
+                    <button type="submit" (click)=register() class="form-control-submit-button">REGISTER</button>
+                  </div>
+                  <div class="form-message">
+                    <div id="rmsgSubmit" class="h3 text-center hidden"></div>
+                  </div>
+                </form>
+              </div> <!-- end of form-container -->
+              <!-- end of request form -->
+
+
+            </div> <!-- end of text-container -->
+          </div> <!-- end of col -->
+          <div class="col-lg-6">
+            <div class="image-container">
+              <img src="assets/images/details-1-office-worker.svg" class="img-fluid1">
+            </div> <!-- end of image-container -->
+          </div> <!-- end of col -->
+        </div> <!-- end of row -->
+      </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+  </div>
+  <!-- end of details 1 -->
+</div>
+<!-- Copyright -->
+<div class="copyright">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <p class="p-small">Copyright © E Gas Sewa - Making LPG connection and services in a smooth way.</p>
+      </div> <!-- end of col -->
+    </div> <!-- enf of row -->
+  </div> <!-- end of container -->
+</div>
